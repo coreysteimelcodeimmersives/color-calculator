@@ -55,15 +55,15 @@ if (decision === 'construct'){
 let color = prompt("Select a color, 'purple', 'orange', 'green', or a color combination, 'red blue', 'red yellow', 'blue yellow' : ");
 
 
-if (color === 'red blue'){
+if (color.includes('red') && color.includes('blue')){
 
     console.log("Red + blue makes: Purple");
 
-} else if (color === 'red yellow'){
+} else if (color.includes('red') && color.includes('yellow')){
 
     console.log("Red + yellow makes: Orange");
 
-} else if (color === 'blue yellow') {
+} else if (color.includes('blue') && color.includes('yellow')) {
 
     console.log("Blue + yellow makes: Green");
 
