@@ -4,17 +4,18 @@ let decision = prompt("This program contructs and deconstructs colors. Would you
 
 if (decision === 'construct'){
 
-    let input = prompt("You can construct 'red + blue', 'red + yellow', or 'blue + yellow'. Enter your construction selection: ");
+    let color1 = prompt("For color 1 choose red, blue or yellow: ");
+    let color2 = prompt("For color 2 choose red, blue or yellow: ");
 
-    if (input === 'red + blue'){
+    if (color1 === "red" && color2 === "blue" || color1 === "blue" && color2 === "red"){
 
         console.log("Red + blue makes: Purple");
 
-    } else if (input === 'red + yellow'){
+    } else if (color1 === "red" && color2 === "yellow" || color1 === "yellow" && color2 === "red"){
 
         console.log("Red + yellow makes: Orange");
 
-    } else if (input === 'blue + yellow') {
+    } else if (color1 === "blue" && color2 === "yellow" || color1 === "yellow" && color2 === "blue") {
 
         console.log("Blue + yellow makes: Green");
 
