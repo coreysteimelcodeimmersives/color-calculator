@@ -1,12 +1,24 @@
 const prompt = require('prompt-sync')();
 
-let decision = prompt("This program contructs and deconstructs colors. Would you like to contruct or deconstruct a color? Enter 'construct' or 'deconstruct': ");
+let decision = prompt("Would you like to contruct or deconstruct a color? Enter 'construct' or 'deconstruct': ");
 
 if (decision === 'construct'){
 
     let color1 = prompt("For color 1 choose red, blue or yellow: ");
-    let color2 = prompt("For color 2 choose red, blue or yellow: ");
 
+    let color2 = 'blue';
+
+    if (color1 === 'red'){
+        color2 = prompt("For color 2 choose blue or yellow: ");
+    } else if (color1 === 'blue'){
+        color2 = prompt("For color 2 choose red or yellow: ");
+    } else if (color1 === 'yellow'){
+        color2 = prompt("For color 2 choose red or blue: ");
+    } else {
+        console.log('error');
+        return;
+    }
+    
     if (color1 === "red" && color2 === "blue" || color1 === "blue" && color2 === "red"){
 
         console.log("Red + blue makes: Purple");
@@ -25,7 +37,7 @@ if (decision === 'construct'){
 
 } else if (decision === 'deconstruct'){
 
-    let input = prompt("You can deconstruct 'purple', 'orange', or 'green'. Enter your deconstruction selection: ");
+    let input = prompt("You can deconstruct 'purple', 'orange', or 'green'. Enter your color selection: ");
 
     if (input === 'purple'){
 
@@ -53,18 +65,18 @@ if (decision === 'construct'){
 
 // Stretch Goals
 
-let color = prompt("Select a color, 'purple', 'orange', 'green', or a color combination, 'red blue', 'red yellow', 'blue yellow' : ");
+let color = prompt("Enter one secondary color (purple, organge, or green), or enter two different primary colors (red, blue, or yellow): ");
 
 
-if (color.includes('red') && color.includes('blue')){
+if (color.includes('red ') && color.includes('blue') || color.includes('red') && color.includes('blue ')){
 
     console.log("Red + blue makes: Purple");
 
-} else if (color.includes('red') && color.includes('yellow')){
+} else if (color.includes('red ') && color.includes('yellow') || color.includes('red') && color.includes('yellow ')){
 
     console.log("Red + yellow makes: Orange");
 
-} else if (color.includes('blue') && color.includes('yellow')) {
+} else if (color.includes('blue ') && color.includes('yellow') || color.includes('blue') && color.includes('yellow ')) {
 
     console.log("Blue + yellow makes: Green");
 
